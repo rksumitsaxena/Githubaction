@@ -1,25 +1,24 @@
-#name: my workflow
-#on: push
-#jobs:
-#  first_job:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - name: repo-check
-#      uses: actions/checkout@v5
-#
-#    - name: welcome mssg
-#      run: |
-#        echo "hello sumit"
-#        ls
-#        touch newfile.tf
-#        ls
-#
-#
-#    - name: list file
-#      run: ls
-#
-#    - name: create file
-#      run: touch myfile.tf
-#
-#    - name: list file
-#      run: ls
+name: my workflow
+on: push
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: repo-check
+      uses: actions/checkout@v5
+
+    - name: welcome mssg
+      run: |
+        echo "hello sumit"
+        ls
+        touch myfile.tf
+
+
+    - name: list file
+      run: ls
+
+    - name: create file
+      run: touch myfile.tf
+
+    - name: list file
+      run: ls
