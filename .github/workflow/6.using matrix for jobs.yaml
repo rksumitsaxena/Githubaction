@@ -1,0 +1,19 @@
+on : push 
+env: 
+          CONTAINER_REGISTRY: docker.io
+#         DOCKER_USERNAME: sumit       since we creatde in repositry level on github
+          IMAGE_NAME: github-action-nginx
+jobs:
+
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest,ubuntu-20.04,windows-latest] 
+        image: [hello-world,alpine]
+    
+    runs-on: ${{ matrix.os }}
+    steps: 
+    - name: Echo Docekr Details
+      run: docker info
+    - name: Run image on ${{ matrix.os }}
+      run: doceker run ${{ matrix.iamges }}
